@@ -18,7 +18,7 @@
 
             <p class="text-muted text-center">{{movieDetails.overview}}</p>
             <br>
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between flex-wrap gap-2">
               <div class="card flex justify-content-center bg-transparent">
                 <form [formGroup]="formGroup">
                     <p-rating formControlName="value"></p-rating>
@@ -27,7 +27,7 @@
               <a [href]="movieDetails.homepage" *ngIf="movieDetails.homepage.length > 0"  target="_blank" class="btn btn-outline-info text-white">Movie Source</a>
             </div>
             <br>
-            <div class="d-flex flex-xl-wrap">
+            <div class="d-flex flex-wrap">
             <p class="" *ngIf="movieDetails.vote_average != 0">vote average : {{movieDetails.vote_average?.toFixed(2)}} </p>
             <p class="mx-2" *ngIf="movieDetails.vote_count != 0">vote count : {{movieDetails.vote_count}} </p>
             <p class="mx-2" *ngIf="movieDetails.revenue != 0">movie revenue : {{movieDetails.revenue|currency}} </p>
@@ -35,7 +35,7 @@
             </div>
             <div *ngIf="movieDetails.genres?.length > 0">
               <h2>Movie Genres</h2>
-              <span *ngFor="let item of movieDetails.genres" class="badge text-bg-success mx-3 fs-5">{{item.name}}</span>
+              <span *ngFor="let item of movieDetails.genres" class="badge text-bg-success mx-3 my-2 fs-5">{{item.name}}</span>
             </div>
         </div>
         <div class="col-12 my-3">

@@ -10,7 +10,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./tv-details.component.css']
 })
 export class TvDetailsComponent {
-  
+
   constructor(private _ActivatedRoute:ActivatedRoute , private _MoviesService:MoviesService){ }
 
   formGroup!: FormGroup;
@@ -64,6 +64,9 @@ export class TvDetailsComponent {
     navText: ['', ''],
     responsive: {
       0: {
+        items:1
+      },
+      940: {
         items: 5
       }
     },

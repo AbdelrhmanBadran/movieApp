@@ -14,11 +14,11 @@
       </div>
       <div class="col-md-7">
           <h1 class="text-center display-1">{{movieDetails.original_name}}</h1>
-          <img [src]="posterPath + movieDetails.backdrop_path" class="w-50 my-3 d-block mx-auto" height="200" alt="">
+          <!-- <img [src]="posterPath + movieDetails.backdrop_path" class="w-50 my-3 d-block mx-auto" height="200" alt=""> -->
 
           <p class="text-muted text-center">{{movieDetails.overview}}</p>
           <br>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between flex-wrap gap-2">
             <div class="card flex justify-content-center bg-transparent">
               <form [formGroup]="formGroup">
                   <p-rating formControlName="value"></p-rating>
@@ -27,16 +27,16 @@
             <a [href]="movieDetails.homepage" target="_blank" class="btn btn-outline-info text-white">Tv Source</a>
           </div>
           <br>
-          <div class="d-flex flex-xl-wrap">
+          <div class="d-flex flex-wrap  justify-content-between gap-2">
           <p class="" *ngIf="movieDetails.vote_average != 0">vote average : {{movieDetails.vote_average?.toFixed(2)}} </p>
-          <p class="mx-2" *ngIf="movieDetails.vote_count != 0">vote count : {{movieDetails.vote_count}} </p>
-          <p class="mx-2" *ngIf="movieDetails.last_air_date"> last air date : {{movieDetails.last_air_date}} </p>
+          <p class="" *ngIf="movieDetails.vote_count != 0">vote count : {{movieDetails.vote_count}} </p>
+          <p class="" *ngIf="movieDetails.last_air_date"> last air date : {{movieDetails.last_air_date}} </p>
           <p class="" *ngIf="movieDetails.original_language">original language : {{movieDetails.original_language }} </p>
           </div>
 
           <div *ngIf="movieDetails.genres?.length > 0">
             <h2>Movie Genres</h2>
-            <span *ngFor="let item of movieDetails.genres" class="badge text-bg-success mx-3 fs-5">{{item.name}}</span>
+            <span *ngFor="let item of movieDetails.genres" class="badge text-bg-success mx-3 my-2 fs-5">{{item.name}}</span>
           </div>
       </div>
       <div class="col-12 my-3">

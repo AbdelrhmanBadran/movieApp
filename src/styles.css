@@ -134,3 +134,38 @@ animation: bounce 1s ease-in infinite;
 .p-button.p-button-warning:enabled:focus {
   box-shadow: none ;
 }
+.p-dialog .p-dialog-header
+{
+  background-color: #0275d8;
+  color: #fff !important;
+}
+.p-dialog{
+  width: 50vw;
+}
+
+@media screen  and (max-width : 600px){
+  .p-dialog{
+    width: 100vw;
+  }
+}
+.navbar-toggler{
+  box-shadow: none !important;
+}
+
+.dropdown-item.active
+{
+  background-color: transparent;
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: none;
+  background-color: #010a11;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(25, 17, 70);
+  border-radius: 50px;
+}

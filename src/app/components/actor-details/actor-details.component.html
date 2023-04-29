@@ -14,11 +14,11 @@
       </div>
       <div class="col-md-7">
           <h1 class="text-center display-1">{{movieDetails.name}}</h1>
-          <img [src]="posterPath + movieDetails.profile_path" class="w-25 my-3 d-block mx-auto" height="200" alt="">
+          <!-- <img [src]="posterPath + movieDetails.profile_path" class="w-25 my-3 d-block mx-auto" height="200" alt=""> -->
 
           <p class="text-muted text-center">{{movieDetails?.biography?.slice(0,500)}}...</p>
           <br>
-          <div class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between flex-wrap">
             <div class="card flex justify-content-center bg-transparent">
               <form [formGroup]="formGroup">
                   <p-rating formControlName="value"></p-rating>
@@ -27,10 +27,10 @@
             <a [href]="movieDetails.homepage" *ngIf="movieDetails.homepage != null || undefined" target="_blank" class="btn btn-outline-info text-white">About</a>
           </div>
           <br>
-          <div class="d-flex flex-xl-wrap">
+          <div class="d-flex flex-wrap">
           <p class="" *ngIf="movieDetails.birthday">birthday : {{movieDetails.birthday}} </p>
-          <p class="mx-2" *ngIf="movieDetails.known_for_department != 0">known for department : {{movieDetails.known_for_department}} </p>
-          <p class="mx-2" *ngIf="movieDetails.place_of_birth"> place of birth : {{movieDetails.place_of_birth}} </p>
+          <p class="" *ngIf="movieDetails.known_for_department != 0">known for department : {{movieDetails.known_for_department}} </p>
+          <p class="" *ngIf="movieDetails.place_of_birth"> place of birth : {{movieDetails.place_of_birth}} </p>
           <p class="" *ngIf="movieDetails.original_language">original language : {{movieDetails.original_language }} </p>
           <p class="" *ngIf="movieDetails.popularity">popularity : <span class="badge rounded-pill text-bg-primary fs-6">{{movieDetails.popularity.toFixed(2) }}</span> </p>
           </div>
@@ -39,7 +39,9 @@
       <div class="col-12 my-3">
         <div *ngIf="movieDetails.also_known_as?.length > 0">
           <h2>Also known as :</h2>
-          <span *ngFor="let item of movieDetails.also_known_as" class="badge text-bg-success m-3 fs-5">{{item}}</span>
+          <div class="d-flex justify-content-between flex-wrap gap-3">
+            <span *ngFor="let item of movieDetails.also_known_as" class="badge text-bg-success fs-5">{{item}}</span>
+          </div>
         </div>
       </div>
       <div class="col-12" *ngIf="similiarMovies.length > 0">

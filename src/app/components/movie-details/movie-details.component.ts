@@ -68,6 +68,9 @@ export class MovieDetailsComponent implements OnInit  {
     navText: ['', ''],
     responsive: {
       0: {
+        items: 1
+      },
+      940: {
         items: 5
       }
     },
