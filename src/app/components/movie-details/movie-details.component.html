@@ -24,7 +24,7 @@
                     <p-rating formControlName="value"></p-rating>
                 </form>
             </div>
-              <a [href]="movieDetails.homepage" *ngIf="movieDetails.homepage.length > 0"  target="_blank" class="btn btn-outline-info text-white">Movie Source</a>
+              <a [href]="movieDetails.homepage" *ngIf="movieDetails?.homepage?.length > 0"  target="_blank" class="btn btn-outline-info text-white">Movie Source</a>
             </div>
             <br>
             <div class="d-flex flex-wrap">
@@ -33,13 +33,13 @@
             <p class="mx-2" *ngIf="movieDetails.revenue != 0">movie revenue : {{movieDetails.revenue|currency}} </p>
             <p class="" *ngIf="movieDetails.budget != 0">movie budget : {{movieDetails.budget |currency}} </p>
             </div>
-            <div *ngIf="movieDetails.genres?.length > 0">
+            <div *ngIf="movieDetails?.genres?.length > 0">
               <h2>Movie Genres</h2>
               <span *ngFor="let item of movieDetails.genres" class="badge text-bg-success mx-3 my-2 fs-5">{{item.name}}</span>
             </div>
         </div>
         <div class="col-12 my-3">
-          <div *ngIf="movieDetails.production_companies?.length > 0">
+          <div *ngIf="movieDetails?.production_companies?.length > 0">
             <h1>Movie Production Companies :</h1>
             <div class="d-flex flex-wrap justify-content-center gap-5">
               <div *ngFor="let item of movieDetails.production_companies" class="mx-3">
