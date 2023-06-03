@@ -19,7 +19,7 @@ export class AuthService {
     }
   }
 
-  baseUrl:string = 'https://route-ecommerce.onrender.com/'
+  baseUrl:string = 'https://ecommerce.routemisr.com/'
 
   decode()
   {
